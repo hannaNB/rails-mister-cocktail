@@ -1,0 +1,43 @@
+<div class="map" style="background-image: url('<%= @cocktail.picture_url %>')"></div>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="cocktail-show-card">
+        <h1><%= @cocktail.name %></h1>
+      </div>
+      <div class="cocktail-show-card">
+        <h3>A bit more about this cocktail...</h3>
+        <h4>Ingredients</h4>
+        <p><%#= @cocktail.dose.description %></p>
+        <ul class="list-unstyled">
+          <% @cocktail.doses.each do |dose| %>
+          <li>
+            <p class="#"><i class="#"></i> <strong> <%= dose.ingredient.name %> </strong> | <%= dose.description %>
+            <%= link_to "X", cocktail_dose_path(@cocktail), class: "btn btn-danger btn-small", method: :delete  %></p>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="cocktail-show-card">
+        <h5>Make this Cocktail !</h5>
+
+      </div>
+      <div class="cocktail-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          <div class="#">
+            <%#= link_to 'Add Dose', new_cocktail_ingredient_path(@cocktail), class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
+            <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
+            <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

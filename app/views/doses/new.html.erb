@@ -1,0 +1,45 @@
+<div class="container padded">
+  <h3 class="text-center">Add an ingredient</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= simple_form_for([@cocktail, @dose]) do |form| %>
+        <% if @dose.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@dose.errors.count, "error") %> prohibited this dose from being saved:</h2>
+
+            <ul>
+              <% @dose.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <p><strong><%= form.label :description %></strong><br>
+          <%= form.text_field :description, size: 30 %></p>
+        </div>
+
+        <div class="form-group">
+          <%#= form.input :description %>
+          <%#= form.association :cocktail %>
+          <%= form.input :ingredient, collection: Ingredient.all.order(:name), selected: "lemon"  %>
+          <%#= form.association :ingredients %>
+          <%#= f.input :ingredient, collection: Ingredient.order(:name),  prompt: "Pick one from list" %>
+          <%#= f.association :ingredients %>
+        </div>
+
+        <div>
+          <%= form.submit 'Create', :class => 'btn btn-warning' %>
+        </div>
+      <% end %>
+      <br>
+    </div>
+  </div>
+</div>
+
+<%#= simple_form_for [@cocktail, @dose] do |f| %>
+        <%#= f.input :description %>
+        <%#= f.input :ingredient, collection: Ingredient.all, selected: "lemon"  %>
+        <%#= f.submit "Submit", class: "btn btn-danger" %>
+<%# end %>

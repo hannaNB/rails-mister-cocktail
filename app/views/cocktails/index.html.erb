@@ -1,0 +1,42 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Cocktails</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @cocktails.count %> Cocktails out of our <%= Cocktail.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Cocktail.count %> cocktails.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <div class="cocktail-card">
+        <div class="cocktail-card-image" style="background-image: url('<%= cocktail.picture_url %>')"></div>
+          <div class="cocktail-card-content">
+            <div class="cocktail-card-title">
+              <h4><%= cocktail.name %></h4>
+            </div>
+
+          </div>
+          <div class="cocktail-card-actions">
+            <%= link_to 'More info', cocktail_path(cocktail) %>
+            <%= link_to 'Edit', edit_cocktail_path(cocktail), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", cocktail_path(cocktail),
+                method: :delete, 
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
