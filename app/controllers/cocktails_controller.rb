@@ -77,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :photo)
+      params.require(:cocktail).permit(:name, :photo, :description)
     end
 end

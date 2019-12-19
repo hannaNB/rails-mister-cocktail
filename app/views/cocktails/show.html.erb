@@ -9,12 +9,12 @@
       </div>
       <div class="cocktail-show-card">
         <h3>A bit more about this cocktail...</h3>
-        <p><%#= @cocktail.dose.description %></p>
+        <p><%= @cocktail.description %></p>
         <h3>Ingredients</h3>
         <ul class="list-unstyled">
           <% @cocktail.doses.each do |dose| %>
           <li>
-            <p class="#"><i class="#"></i> <strong>Ingredient : </strong><%= dose.ingredient.name %> - <%= dose.description %>&nbsp;
+            <p style="color: grey"><strong>Ingredient : </strong><%= dose.ingredient.name %> - <%= dose.description %>&nbsp;&nbsp;
             <%= link_to dose_path(dose), method: :delete, data: { confirm: "Do you really want to delete #{dose.ingredient.name}?" } do %>
             <i class="fas fa-trash-alt" style="color: grey" aria-hidden="true"></i><% end %></p>
           </li>
@@ -26,19 +26,50 @@
     <div class="col-4">
       <div class="cocktail-show-card">
         <h5>Make this Cocktail !</h5>
-
+        <p>Follow the recipe or make your own !</p>
       </div>
+
       <div class="cocktail-show-card">
         <h3>Manage Ingredients</h3>
-        <div class="flex">
+        <div class="#">
+          <div>
+            <span>You can add or delete ingredients to better fit your taste</span>
+          </div>
+          <br>
           <div class="#">
             <%#= link_to 'Add Dose', new_cocktail_ingredient_path(@cocktail), class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
-            <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
-            <%= link_to "Go back", cocktails_path, class: "btn btn-warning" %>
-        </div>
+            <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary", id: "ingredient-add-button"%>
+            <%= link_to "Go Back", cocktails_path, class: "btn btn-warning" %>
+          </div>
         </div>
       </div>
+
     </div>
+
+    <div class="col-8">
+      <div class="cocktail-show-card">
+        <h3>Reviews ...</h3>
+            <ul>
+              <% @cocktail.reviews.each do |review| %>
+                <li style="color: grey"><strong>Review : </strong><%= review.content %>&nbsp;
+                  <strong>Rating : </strong>
+                  <% review.stars.times do  %>
+                    <i class="fas fa-star" style="color: #FFC700" aria-hidden="true"></i>
+                  <% end %>
+                  <% review.blank_stars.times do %>
+                    <i class="far fa-star" aria-hidden="true"></i>
+                  <% end %>
+                  <%#= review.stars %>&nbsp;&nbsp;
+                <%= link_to review_path(review), method: :delete, data: { confirm: "Do you really want to delete this Review ?" } do %>
+                <i class="fas fa-trash-alt" style="color: grey" aria-hidden="true"></i><% end %></p>
+                </li>
+              <% end %>
+            </ul>
+            <%#= link_to 'Add Dose', new_cocktail_ingredient_path(@cocktail), class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
+            <%= link_to "Add Review",  new_cocktail_review_path(@cocktail), class: "btn btn-secondary", id: "review-add-button"%>
+      </div>
+    </div>
+    
   </div>
 </div>
 

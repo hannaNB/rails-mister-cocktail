@@ -14,7 +14,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     @dose.ingredient = Ingredient.find(params["dose"]["ingredient"]) unless params["dose"]["ingredient"].blank?
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_url(@cocktail), notice: 'cocktail was successfully destroyed.'
     else
      render :new
      # render 'cocktails/show' # to have verifications on the same page
@@ -26,10 +26,12 @@ class DosesController < ApplicationController
     # @dose.cocktail = @cocktail
     # @dose.ingredient = Ingredient.find(params["dose"]["ingredient"])
     @dose = Dose.find(params[:id])
-    @dose.destroy
-    respond_to do |format|
-      format.html { redirect_to cocktails_url, notice: 'cocktail was successfully destroyed.' }
-      format.json { head :no_content }
+    # @dose.destroy
+    if @dose.destroy
+      redirect_to cocktail_url(@dose.cocktail), notice: 'Ingredient was successfully destroyed.'
+    else
+     render :new
+     # render 'cocktails/show' # to have verifications on the same page
     end
   end
 

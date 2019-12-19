@@ -1,8 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
 .home-banner {
     background-image: asset-url('banner.jpg');
+    // filter: blur(2px);
+    //   -webkit-filter: blur(2px);
     background-size: cover;
     height: 100vh;
     color: #eee;
     text-align: center;
     padding-top: 40vh;
-  }
+}
+
+.bold-txt {
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60, 0 0 2px #d60;
+}
