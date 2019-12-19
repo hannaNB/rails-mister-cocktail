@@ -15,79 +15,60 @@ puts 'Creating cocktails, ingredients...'
 cocktails_attributes = [
     {
     name: "Martini",
-    picture_url: 'https://images.unsplash.com/photo-1571577556441-cd4af9c209f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Margarita",
-    picture_url: 'https://images.unsplash.com/photo-1461823385004-d7660947a7c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Cuba Libre",
-    picture_url: 'https://images.unsplash.com/photo-1575650772417-e6b418b0d106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Gin tonic",
-    picture_url: 'https://images.unsplash.com/photo-1563556812239-013bf57d6aeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     }, 
     {
     name: "Cosmopolitan",
-    picture_url: 'https://images.unsplash.com/photo-1575650772417-e6b418b0d106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Caïpirinha",
-    picture_url: 'https://images.unsplash.com/photo-1570813092574-b4cccfc58f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Pink Love",
-    picture_url: 'https://images.unsplash.com/photo-1549987024-8f2248d5514c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Gin fizz",
-    picture_url: 'https://images.unsplash.com/photo-1514447199254-1417a6fcbed2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "White Lady",
-    picture_url: 'https://images.unsplash.com/photo-1570821574759-c104ca40f7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Singapore sling",
-    picture_url: 'https://images.unsplash.com/photo-1563223771-375783ee91ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Piña colada",
-    picture_url: 'https://images.unsplash.com/photo-1490324120634-0fa86c62d6c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Ti-punch",
-    picture_url: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
-    name: "Blue Hawaii",
-    picture_url: 'https://images.unsplash.com/photo-1562708294-4df93280352d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
+    name: "Cocktail Blue Hawaii",
     },
     {
     name: "Blody Mary",
-    picture_url: 'https://images.unsplash.com/photo-1486947799489-3fabdd7d32a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Sex on the beach",
-    picture_url: 'https://images.unsplash.com/photo-1550583429-ef06ff4d5a10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
-    name: "Blue Lagoon",
-    picture_url: 'https://images.unsplash.com/photo-1550555179-309357935820?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60'
+    name: "Lagoon Blue Spirit" ,
     },
     {
-    name: "Blue Hawaii",
-    picture_url: 'https://images.unsplash.com/photo-1567671899076-51a64ddb7c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
+    name: "Blue Sky",
     },
     {
     name: "Manhattan",
-    picture_url: 'https://images.unsplash.com/photo-1542847890-8c4210389b23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
     {
     name: "Old Fashioned",
-    picture_url: 'https://images.unsplash.com/photo-1550426735-c33c7ce414ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60'
     },
 ]
 Cocktail.create!(cocktails_attributes)

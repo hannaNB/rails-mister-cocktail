@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_103900) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "picture_url"
+    t.string "photo"
   end
 
   create_table "doses", force: :cascade do |t|

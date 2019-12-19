@@ -1,20 +1,22 @@
-<div class="map" style="background-image: url('<%= @cocktail.picture_url %>')"></div>
+<div class="map" style=""></div>
 
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
-      <div class="cocktail-show-card">
+      <div class="cocktail-show-card-one">
         <h1><%= @cocktail.name %></h1>
+        <div class="cocktail-card-image"><%= cl_image_tag @cocktail.photo, height: 180, width: 350, crop: :fill %></div>
       </div>
       <div class="cocktail-show-card">
         <h3>A bit more about this cocktail...</h3>
-        <h4>Ingredients</h4>
         <p><%#= @cocktail.dose.description %></p>
+        <h3>Ingredients</h3>
         <ul class="list-unstyled">
           <% @cocktail.doses.each do |dose| %>
           <li>
-            <p class="#"><i class="#"></i> <strong> <%= dose.ingredient.name %> </strong> | <%= dose.description %>
-            <%= link_to "X", cocktail_dose_path(@cocktail), class: "btn btn-danger btn-small", method: :delete  %></p>
+            <p class="#"><i class="#"></i> <strong>Ingredient : </strong><%= dose.ingredient.name %> - <%= dose.description %>&nbsp;
+            <%= link_to dose_path(dose), method: :delete, data: { confirm: "Do you really want to delete #{dose.ingredient.name}?" } do %>
+            <i class="fas fa-trash-alt" style="color: grey" aria-hidden="true"></i><% end %></p>
           </li>
           <% end %>
         </ul>
@@ -27,7 +29,7 @@
 
       </div>
       <div class="cocktail-show-card">
-        <h3>Details</h3>
+        <h3>Manage Ingredients</h3>
         <div class="flex">
           <div class="#">
             <%#= link_to 'Add Dose', new_cocktail_ingredient_path(@cocktail), class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>

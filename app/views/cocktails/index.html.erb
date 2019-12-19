@@ -1,3 +1,6 @@
+<div class="home-banner">
+</div>
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
@@ -19,7 +22,8 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-4">
         <div class="cocktail-card">
-        <div class="cocktail-card-image" style="background-image: url('<%= cocktail.picture_url %>')"></div>
+        <!--  <div class="cocktail-card-image" style="background-image: url('<%= cocktail.photo %>')">  -->
+        <div class="cocktail-card-image"><%= cl_image_tag cocktail.photo, height: 180, width: 350, crop: :fill %></div>
           <div class="cocktail-card-content">
             <div class="cocktail-card-title">
               <h4><%= cocktail.name %></h4>

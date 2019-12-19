@@ -61,6 +61,7 @@ end
   # DELETE /cocktails/1
   # DELETE /cocktails/1.json
   def destroy
+    raise
     @cocktail.destroy
     respond_to do |format|
       format.html { redirect_to cocktails_url, notice: 'cocktail was successfully destroyed.' }
@@ -76,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :picture_url)
+      params.require(:cocktail).permit(:name, :photo)
     end
 end
