@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
-  # root to: 'cocktails#index'
+  root to: 'cocktails#index'
   resources :cocktails do
     resources :doses, only: [:new, :create] do
       #get 'dose', to: 'cocktails#dose', as: :dose
