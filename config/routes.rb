@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # impossible to push to heroku without a root !
   root to: 'cocktails#index'
   resources :cocktails do
